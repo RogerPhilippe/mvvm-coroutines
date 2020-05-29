@@ -1,14 +1,12 @@
-## mvvm-coroutines
+# mvvm-coroutines
 
-#Característucas
-
-Exemplo mvvm com:
-* Branch main
+## Exemplo mvvm com:
+### Branch main
 * Thread Runnable e CallBack
 * MainViewModelFactory
-* Branch main e feature_dependency_injection
+### Branch main e feature_dependency_injection
 * Corrotina
-* Branch feature_dependency_injection
+### Branch feature_dependency_injection
 * Injeção de dependência a Koin
 * ProgressBar com efeito circular
 * Observer com viewLifecyclerOwner
