@@ -1,5 +1,9 @@
 package br.com.nakajimaphilippe.mvvmcoroutines.ui.main
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
+
 class MainRepository {
 
     fun getMoviesCallback(callback: (movies: List<Movie>) -> Unit) {
@@ -12,6 +16,16 @@ class MainRepository {
                 )
             )
         }).start()
+    }
+
+    suspend fun getMoviesCoroutines(): List<Movie> {
+        return withContext(Dispatchers.Default) {
+            delay(3000)
+            listOf(
+                Movie(1, "Titulo 1"),
+                Movie(1, "Titulo 2")
+            )
+        }
     }
 
 }

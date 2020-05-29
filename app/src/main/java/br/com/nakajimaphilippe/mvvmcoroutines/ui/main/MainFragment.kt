@@ -36,7 +36,8 @@ class MainFragment : Fragment() {
             containerText.visibility = View.VISIBLE
         })
 
-        viewModel.getMovies()
+        //viewModel.getMovies()
+        viewModel.getMoviesCoroutines()
 
     }
 
