@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.nakajimaphilippe.mvvmcoroutines.R
 import kotlinx.android.synthetic.main.main_fragment.*
+import java.lang.StringBuilder
 
 class MainFragment : Fragment() {
 
@@ -31,7 +32,11 @@ class MainFragment : Fragment() {
             .get(MainViewModel::class.java)
 
         viewModel.movieLiveData.observe(viewLifecycleOwner, Observer { movies ->
-            tfMovies.text = movies[0].title
+            val allTitles = StringBuilder()
+            movies.map { movie ->
+                allTitles.append(movie.id).append(" - ").append(movie.title).append("\n")
+            }
+            tfMovies.text = allTitles.toString()
             progressBar.visibility = View.GONE
             containerText.visibility = View.VISIBLE
         })

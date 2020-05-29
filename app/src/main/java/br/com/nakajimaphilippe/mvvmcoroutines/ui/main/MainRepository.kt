@@ -12,7 +12,7 @@ class MainRepository {
             callback.invoke(
                 listOf(
                     Movie(1, "Titulo 1"),
-                    Movie(1, "Titulo 2")
+                    Movie(2, "Titulo 2")
                 )
             )
         }).start()
@@ -23,7 +23,7 @@ class MainRepository {
             delay(3000)
             listOf(
                 Movie(1, "Titulo 1"),
-                Movie(1, "Titulo 2")
+                Movie(2, "Titulo 2")
             )
         }
     }
